@@ -1,24 +1,30 @@
 
 const inputTugas = document.getElementById("inputTugas")
+const inputTanggal = document.getElementById("inputTanggal");
 const btntambah = document.getElementById("btnTambah")
 const daftarTugas = document.getElementById("daftarTugas")
 
 btntambah.addEventListener("click", function(){
     
-    let teskTugas = inputTugas.value;
-
     if(teskTugas === ""){
         alert("Data harus dimasukan!");
         return;
     }
-    
+
+    let teskTugas = inputTugas.value;
+    let tanggalValue = inputTanggal.value || "Tidak ada tanggal";
     let listbaru = document.createElement("li");
     let spanbaru = document.createElement("span");
+    spanbaru.innerHTML = teskTugas + " <small>(" + tanggalValue + ")</small>";
 
-    spanbaru.innerHTML= teskTugas;
+    let tombolHapus = document.createElement("button");
+        tombolHapus.innerHTML = "Hapus";
+        tombolHapus.style.marginLeft = "10px";
+        tombolHapus.onclick = function() {
+        listbaru.remove();
+    };
 
     listbaru.appendChild(spanbaru);
-
     daftarTugas.appendChild(listbaru);
 
     const warnabaru = document.querySelectorAll("li");
