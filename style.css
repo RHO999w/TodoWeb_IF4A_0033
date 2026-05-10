@@ -1,3 +1,19 @@
+body {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 700px;
+    margin: 0 auto;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
 h1{
     text-align: center;
     color: #4338ca;
