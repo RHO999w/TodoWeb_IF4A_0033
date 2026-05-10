@@ -58,7 +58,6 @@ btntambah.addEventListener("click", function(){
     tombolEdit.onclick = function() {
         let teksBaru = prompt("Edit tugas:", teskTugas);
         let tanggalBaru = prompt("Edit tanggal (YYYY-MM-DD):", tanggalValue);
-        
         if(teksBaru && teksBaru !== "") {
             teskTugas = teksBaru;
         }

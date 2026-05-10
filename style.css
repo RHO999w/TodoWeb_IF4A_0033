@@ -59,6 +59,14 @@ li span {
     gap: 4px;
 }
 
+li button {
+    transition: all 0.2s ease;
+}
+
+li button:hover {
+    transform: scale(1.05);
+}
+
 .task-info {
     flex: 1;
     display: flex;
