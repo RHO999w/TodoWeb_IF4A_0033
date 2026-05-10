@@ -11,7 +11,7 @@ h1{
 .form input[type="text"] {
     flex: 2;
     padding: 10px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid #0274ff;
     border-radius: 6px;
 }
 
@@ -42,7 +42,7 @@ ul {
 
 li{
     margin-top: 10px;
-    background: rgb(156, 189, 233);
+    background: rgb(175, 202, 236);
     padding: 10px;
     border-radius: 6px;
     display: flex;

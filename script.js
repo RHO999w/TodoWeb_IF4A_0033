@@ -68,9 +68,9 @@ btntambah.addEventListener("click", function(){
     const warnabaru = document.querySelectorAll("li");
     warnabaru.forEach((item, index) => {
         if(index % 2 === 0){
-            item.style.color = "red";
+            item.style.color = "brown";
         } else {
-            item.style.color = "green";
+            item.style.color = "black";
         }
     });
 
