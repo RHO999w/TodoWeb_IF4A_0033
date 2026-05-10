@@ -6,13 +6,22 @@ const daftarTugas = document.getElementById("daftarTugas")
 
 btntambah.addEventListener("click", function(){
     
+    let teskTugas = inputTugas.value;
+    let tanggalValue = inputTanggal.value || "Tidak ada tanggal";
+
     if(teskTugas === ""){
         alert("Data harus dimasukan!");
         return;
     }
 
-    let teskTugas = inputTugas.value;
-    let tanggalValue = inputTanggal.value || "Tidak ada tanggal";
+    if(tanggalValue === "") {
+        let today = new Date();
+        let tahun = today.getFullYear();
+        let bulan = today.getMonth() + 1;
+        let hari = today.getDate();
+        tanggalValue = tahun + "-" + bulan + "-" + hari;
+    }
+
     let listbaru = document.createElement("li");
     let spanbaru = document.createElement("span");
     spanbaru.innerHTML = teskTugas + " <small>(" + tanggalValue + ")</small>";
@@ -24,7 +33,36 @@ btntambah.addEventListener("click", function(){
         listbaru.remove();
     };
 
+    let tombolEdit = document.createElement("button");
+    tombolEdit.innerHTML = "Edit";
+    tombolEdit.style.marginLeft = "5px";
+    tombolEdit.onclick = function() {
+        let teksBaru = prompt("Edit tugas:", teskTugas);
+        if(teksBaru && teksBaru !== "") {
+            teskTugas = teksBaru;
+            spanbaru.innerHTML = teskTugas + " <small>(" + tanggalValue + ")</small>";
+        }
+    };
+
+    let tombolStatus = document.createElement("button");
+    tombolStatus.innerHTML = "Progress";
+    tombolStatus.style.marginLeft = "5px";
+    tombolStatus.style.background = "orange";
+    tombolStatus.onclick = function() {
+        if(tombolStatus.innerHTML === "Progress") {
+            tombolStatus.innerHTML = "Done";
+            tombolStatus.style.background = "green";
+        } else {
+            tombolStatus.innerHTML = "Progress";
+            tombolStatus.style.background = "orange";
+            listbaru.style.textDecoration = "none";
+        }
+    };
+
     listbaru.appendChild(spanbaru);
+    listbaru.appendChild(tombolStatus);
+    listbaru.appendChild(tombolEdit);
+    listbaru.appendChild(tombolHapus);
     daftarTugas.appendChild(listbaru);
 
     const warnabaru = document.querySelectorAll("li");
