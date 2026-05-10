@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+    background: linear-gradient(135deg, #1e1b4b 0%, #4e4c97 100%);
     min-height: 100vh;
     padding: 20px;
     margin: 0;
@@ -149,7 +149,7 @@ li button:hover {
 }
 
 .status-badge.progress {
-    background: #3b82f6;
+    background: #ff5100;
     color: white;
 }
 
