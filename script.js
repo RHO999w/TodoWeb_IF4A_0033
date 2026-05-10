@@ -44,6 +44,12 @@ btntambah.addEventListener("click", function(){
     let tombolEdit = document.createElement("button");
     tombolEdit.innerHTML = "Edit";
     tombolEdit.style.marginLeft = "5px";
+    tombolEdit.style.background = "#f59e0b";
+    tombolEdit.style.color = "white";
+    tombolEdit.style.border = "none";
+    tombolEdit.style.padding = "6px 12px";
+    tombolEdit.style.borderRadius = "6px";
+    tombolEdit.style.cursor = "pointer";
     tombolEdit.onclick = function() {
         let teksBaru = prompt("Edit tugas:", teskTugas);
         if(teksBaru && teksBaru !== "") {
@@ -55,14 +61,20 @@ btntambah.addEventListener("click", function(){
     let tombolStatus = document.createElement("button");
     tombolStatus.innerHTML = "Progress";
     tombolStatus.style.marginLeft = "5px";
-    tombolStatus.style.background = "orange";
+    tombolStatus.style.background = "#3b82f6";
+    tombolStatus.style.color = "white";
+    tombolStatus.style.border = "none";
+    tombolStatus.style.padding = "6px 12px";
+    tombolStatus.style.borderRadius = "6px";
+    tombolStatus.style.cursor = "pointer";
     tombolStatus.onclick = function() {
         if(tombolStatus.innerHTML === "Progress") {
             tombolStatus.innerHTML = "Done";
-            tombolStatus.style.background = "green";
+            tombolStatus.style.background = "#10b981";
+            listbaru.style.textDecoration = "line-through";
         } else {
             tombolStatus.innerHTML = "Progress";
-            tombolStatus.style.background = "orange";
+            tombolStatus.style.background = "#3b82f6";
             listbaru.style.textDecoration = "none";
         }
     };
@@ -83,6 +95,6 @@ btntambah.addEventListener("click", function(){
     });
 
     inputTugas.value = "";
-
+    inputTanggal.value = "";
 
 });
