@@ -52,6 +52,12 @@ li{
     gap: 10px;            
 }
 
+li:hover {
+    background: rgb(135, 172, 216);
+    transform: translateX(5px);
+    transition: 0.3s;
+}
+
 li span {
     flex: 1;
     display: flex;
